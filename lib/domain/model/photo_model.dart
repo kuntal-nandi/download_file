@@ -1,5 +1,6 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'photo_model.freezed.dart';
 part 'photo_model.g.dart';
@@ -23,8 +24,9 @@ class PhotoModel with _$PhotoModel {
     required PhotoLinks links,
     required int likes,
     @JsonKey(name: 'liked_by_user') bool? likedByUser,
-    @JsonKey(name: 'current_user_collections') List<String>? currentUserCollections,
-     PhotoSponsorship? sponsorship,
+    @JsonKey(name: 'current_user_collections')
+    List<String>? currentUserCollections,
+    PhotoSponsorship? sponsorship,
   }) = _PhotoModel;
 
   factory PhotoModel.fromJson(Map<String, dynamic> json) =>
@@ -88,7 +90,8 @@ class PhotoSponsor with _$PhotoSponsor {
     String? bio,
     String? location,
     required PhotoSponsorLinks links,
-    @JsonKey(name: 'profile_image') required PhotoSponsorProfileImage profileImage,
+    @JsonKey(name: 'profile_image')
+    required PhotoSponsorProfileImage profileImage,
     @JsonKey(name: 'instagram_username') String? instagramUsername,
     @JsonKey(name: 'total_collections') int? totalCollections,
     @JsonKey(name: 'total_likes') int? totalLikes,
